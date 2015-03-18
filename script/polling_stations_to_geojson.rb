@@ -47,8 +47,8 @@ csv.each do |row|
   geometry = {}
   geometry['type'] = "Point"
   geometry['coordinates'] = []
-  geometry['coordinates'].push feature['properties']['longitude']
-  geometry['coordinates'].push feature['properties']['latitude']
+  geometry['coordinates'].push feature['properties']['longitude'].to_f
+  geometry['coordinates'].push feature['properties']['latitude'].to_f
   feature['geometry'] = geometry
   features.push feature
 end
